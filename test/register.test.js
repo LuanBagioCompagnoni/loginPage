@@ -1,20 +1,20 @@
 const {hasLowerCase, hasNumber, hasSpecialsChars, hasTheMinimumValue, hasUpperCase} = require('../script/passwordValidator.js');
 
 describe('Test the register of password', () => {
-  it('should validate if has lower case', () => {
-    expect(hasLowerCase("TESTE@123")).ToBe(false)
+  test('should validate if has lower case', () => {
+    expect(hasLowerCase("TESTE@123")).toBeFalsy()
   });   
-  it('should validate if has number', () => {
-    expect(hasNumber("TESTE@teste@")).ToBe(false)
+  test('should validate if has number', () => {
+    expect(hasNumber("TESTE@teste@")).toBeFalsy()
   });  
-  it('should validate if has special chars', () => {
-    expect(hasSpecialsChars("Teste1234Teste")).ToBe(false)
+  test('should validate if has special chars', () => {
+    expect(hasSpecialsChars("Teste1234Teste")).toBeFalsy()
   });  
-  it('should validate if has the minimum of chars', () => {
-    expect(hasTheMinimumValue("Teste@1")).ToBe(false)
+  test('should validate if has the minimum of chars', () => {
+    expect(hasTheMinimumValue("Teste@1")).toBeFalsy()
   });  
-  it('should validate if has upper case', () => {
-    expect(hasUpperCase("teste@1234")).ToBe(false)
+  test('should validate if has upper case', () => {
+    expect(hasUpperCase("teste@1234")).toBeFalsy()
   });  
 
 });
