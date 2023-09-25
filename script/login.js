@@ -13,7 +13,10 @@ function directionLogin(){
 
   const isCorrect = Login(username, password);
   if(isCorrect){
-    window.location.href = "logado.html"
+    document.getElementById('resultado').innerText = "Logado com sucesso! Redirecionando..."
+    setTimeout(()=>{      
+      window.location.href = "logado.html"
+    }, "3000")
   }
   else{
     alert("Usuário ou Senha inválida!")

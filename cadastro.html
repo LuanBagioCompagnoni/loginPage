@@ -1,63 +1,35 @@
 <!DOCTYPE html>
-
 <html lang="pt-br">
-
     <head>
-
         <meta charset="UTF-8">
-
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
         <meta name="viewport"content="width=device-width, initial-scale=1.0">
-
         <link rel="stylesheet" href="css/style.css">
-
         <title>Login</title>
-
     </head>
-
     <body>
-
         <div id="login">
-
             <form class="card" name="login">
-
                 <div class="card-header">
-
                     <h2>Register</h2>
-
                 </div>
-
                 <div class="card-content">
-
                     <div class="card-content-area">
-
                         <label for="usuario">Usuário</label>
-
                         <input type="text" id="name" autocomplete="off">
-
                     </div>
-
                     <div class="card-content-area">
-
                         <label for="password">Senha</label>
-
                         <input type="password" id="password" oninput="passwordValidate()" autocomplete="off">
-
                     </div>
-
                 </div>
-
                 <div class="card-footer">
                     <div id="resultado"></div>
                     <input class = "submit" type=button value="Registrar" onclick="savePassword()">
                     <script src="script/registerValidator.js"></script> 
                     <a href="login.html" class="criar_conta">Login</a>
-
                 </div>
-
             </form>
-
         </div>
         <form class="card" name="login">
             <div id="validate">
@@ -68,5 +40,4 @@
                 <p id="min">Minimo 8 caracteres</p>
             </div>
         </form>
-
     </body>
