@@ -42,7 +42,7 @@
 
                         <label for="password">Senha</label>
 
-                        <input type="password" id="password" onchange="passwordValidate()" autocomplete="off">
+                        <input type="password" id="password" oninput="passwordValidate(this.value)" autocomplete="off">
 
                     </div>
 
@@ -52,7 +52,7 @@
                     <div id="resultado"></div>
                     <input class = "submit" type=button value="Registrar" onclick="savePassword()">
                     <script src="script/registrar.js"></script> 
-                    <script src="script/passwordValidator.js"></script> 
+                    <script src="script/registerValidator.js"></script> 
                     <a href="index.html" class="criar_conta">Login</a>
 
                 </div>

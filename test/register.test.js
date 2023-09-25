@@ -1,4 +1,4 @@
-const {hasLowerCase, hasNumber, hasSpecialsChars, hasTheMinimumValue, hasUpperCase} = require('../script/passwordValidator.js');
+const {hasLowerCase, hasNumber, hasSpecialsChars, hasTheMinimumValue, hasUpperCase, hasValue, isValidUsername} = require('../script/registerValidator.js');
 
 describe('Test the register of password', () => {
   test('should validate if has lower case', () => {
@@ -16,6 +16,11 @@ describe('Test the register of password', () => {
   test('should validate if has upper case', () => {
     expect(hasUpperCase("teste@1234")).toBeFalsy()
   });  
-
+  test('should validate if password is empty', () => {
+    expect(hasValue("")).toBeFalsy()
+  });  
+  test('should validate if the format username is valid', () => {
+    expect(isValidUsername("email.com")).toBeFalsy()
+  });  
 });
 
