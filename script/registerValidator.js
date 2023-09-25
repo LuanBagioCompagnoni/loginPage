@@ -15,7 +15,6 @@ function savePassword(e) {
         document.getElementById('resultado').innerText = "Essa senha não é valida!"
 }
 function passwordValidate() {
-    console.log("oxik")
     let password = document.getElementById('password').value;
     let user = document.getElementById('name').value;
     var Number = color("num",hasNumber(password));
