@@ -5,25 +5,27 @@ function savePassword(e) {
         document.getElementById('resultado').innerText = "Registrado com sucesso! Redirecionando..."
         setTimeout(()=>{
             window.location.href = "logado.html"
-            console.log("Aguardando 1 segundo")
         }, "3000")
     }
-    else if(!isValidUsername(document.getElementById('name').innerText))
+    else if(!isValidUsername(document.getElementById('name').value))
         document.getElementById('resultado').innerText = "Por favor, informe um e-mail válido!"
-    else if(isNotNull(a))
+    else if(hasValue(a))
         document.getElementById('resultado').innerText = "Por favor, informe uma senha!"
     else
         document.getElementById('resultado').innerText = "Essa senha não é valida!"
 }
 function passwordValidate() {
-    let password = document.getElementById('password').value
+    console.log("oxik")
+    let password = document.getElementById('password').value;
+    let user = document.getElementById('name').value;
     var Number = color("num",hasNumber(password));
     var UpperCase = color("mai",hasUpperCase(password));
     var LowerCase = color("minu",hasLowerCase(password));
     var TheMinimumValue = color("min",hasTheMinimumValue(password));
     var SpecialsChars = color("esp",hasSpecialsChars(password));
     var IsNotNull = hasValue(password);
-    test = Number && UpperCase && LowerCase && TheMinimumValue && SpecialsChars && IsNotNull; 
+    var isValidUser = isValidUsername(user);
+    test = Number && UpperCase && LowerCase && TheMinimumValue && SpecialsChars && IsNotNull && isValidUser;
     isValid = test;
     return test;
 }
@@ -56,11 +58,11 @@ function hasSpecialsChars(password) {
     return /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/.test(password)
 }
 function hasValue(password){
-    return password !== null && password === null;
+    return password !== "" && password !== null;
 }
 
 function isValidUsername(username){
-    return username !== null && username !== "" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(username) ;
+    return username !== null && username !== "" && /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(username) ;
 }
 
 module.exports = {hasSpecialsChars, hasTheMinimumValue, hasLowerCase, hasNumber, hasUpperCase, hasValue, isValidUsername}
